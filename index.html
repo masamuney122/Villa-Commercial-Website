@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Villa Fish</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <meta name="description" content="Fethiye'de doğayla iç içe, özel havuzlu Villa Fish tatil villası.">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand"><span class="logo" aria-hidden="true">🐟</span> VILLA FISH</div>
+      <nav class="menu">
+        <a href="#gallery">galeri</a>
+        <a href="#about">hakkımızda</a>
+        <a href="#contact" class="contact">contact us</a>
+      </nav>
+      <button class="hamburger" aria-label="Menüyü aç/kapat">☰</button>
+    </div>
+  </header>
+
+  <section class="hero" aria-label="Kapak görseli">
+    <div class="hero-media">
+      <video class="hero-video" autoplay muted loop playsinline preload="auto">
+        <source src="assets/video/hero.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero-overlay">
+      <h1>SAKİN BİR BAŞLANGIÇ</h1>
+    </div>
+  </section>
+
+  <main>
+    <section id="features" class="section">
+      <div class="container">
+        <h2>DOĞANIN VE YAŞAMIN İÇİNDE</h2>
+        <div class="grid features-grid">
+          <article class="card">
+            <img src="assets/img/feature-left.jpg" alt="Villa dış görünüş">
+          </article>
+          <article class="card">
+            <img src="assets/img/feature-mid.jpg" alt="Villa iç detay">
+          </article>
+          <article class="card">
+            <img src="assets/img/feature-right.jpg" alt="Havuz">
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="activities" class="section alt">
+      <div class="container narrow">
+        <h3>Villa Fish – Fethiye’nin Eşsiz Doğasında Unutulmaz Bir Tatil Deneyimi</h3>
+        <p>7 yıldır villa kiralama sektöründe edindiğimiz tecrübeyle, misafirlerimize sadece konaklama değil, aynı zamanda unutulmaz bir tatil deneyimi sunuyoruz.
+          Fethiye’nin benzersiz doğasında; Babadağ’da yamaç paraşütü yaparak gökyüzünden manzarayı seyredebilir, Akdeniz’in berrak sularında dalış 
+          yaparak rengarenk su altı dünyasını keşfedebilir, tekne turlarıyla koy koy gezebilir ya da Likya Yolu’nda doğa yürüyüşüne çıkabilirsiniz.
+          Villa Fish’te, doğayla iç içe huzur ve konforu bir arada bulurken; macera dolu aktivitelerle tatilinize renk katabilirsiniz.
+          <br> <br> <br> <br> <br>
+        </p>
+      </div>
+      <div class="container collage">
+        <div class="collage-left">
+          <img src="assets/img/paragliding.jpg" alt="Yamaç paraşütü">
+        </div>
+        <div class="collage-right">
+          <img src="assets/img/diving.jpg" alt="Dalış">
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container narrow amenities">
+        <ul>
+          <li>Özel yüzme havuzu</li>
+          <li>Geniş veranda ve yemyeşil bahçe</li>
+          <li>Modern mutfak ve barbekü</li>
+          <li>Ücretsiz Wi‑Fi, HDTV</li>
+          <li>Güvenlik kameraları ve özel otopark</li>
+          <li>Açık hava duşu ve sıcak su</li>
+          <li>Yangın söndürücü ve ilk yardım çantası</li>
+          <li>Binada çamaşır makinesi (Ücretsiz)</li>
+          <li>Beşik - ilanda her zaman bulunuyor</li>
+          <li>Mama sandalyesi</li>
+          <li>Bütün odalarda klima</li>
+          <li>Hamak</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="gallery" class="section alt">
+      <div class="container">
+        <h2>Tarihin ve Konforun Buluşma Noktası</h2>
+        <div class="carousel">
+          <button class="prev" aria-label="Önceki">‹</button>
+          <div class="track">
+            <img src="assets/img/room1.jpg" alt="Oda 1">
+            <img src="assets/img/room2.jpg" alt="Oda 2">
+            <img src="assets/img/livingroom.jpg" alt="Salon">
+            <img src="assets/img/kitchen.jpg" alt="Mutfak">
+            <img src="assets/img/pool1.jpg" alt="Havuz">
+            <img src="assets/img/pool2.jpg" alt="Havuz 2">
+            <img src="assets/img/garden.jpg" alt="Bahçe">
+          </div>
+          <button class="next" aria-label="Sonraki">›</button>
+        </div>
+      </div>
+    </section>
+    <!-- Galeri bölümünden hemen sonra ekle -->
+    <div id="image-modal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modal-img" alt="">
+    </div>
+  </main>
+
+  <footer id="contact" class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div id="leaflet-map"></div>
+      </div>
+      <div class="contact">
+        <h3>İLETİŞİM:</h3>
+        <p><a href="tel:+905055777653">+90 505 577 76 53</a><br>
+        <a href="mailto:villafish@gmail.com">villafish@gmail.com</a></p>
+        <p><strong>ADRES</strong><br>Fethiye, Muğla</p>
+        <div class="social">
+          <a href="https://www.airbnb.com.tr/rooms/21034521?guests=1&adults=1&s=67&unique_share_id=a637f845-249f-4bb3-9822-9f9aa1b41840" target="_blank" aria-label="Airbnb">
+            <!-- Airbnb SVG -->
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;">
+              <path d="M16 4c-3.2 0-6.1 1.7-7.7 4.5-1.7 2.8-1.7 6.2 0 9l7.7 13.5 7.7-13.5c1.7-2.8 1.7-6.2 0-9C22.1 5.7 19.2 4 16 4zm0 2c2.6 0 5 1.4 6.3 3.7 1.4 2.3 1.4 5.1 0 7.4L16 26.1l-6.3-11c-1.4-2.3-1.4-5.1 0-7.4C11 7.4 13.4 6 16 6zm0 5a3 3 0 100 6 3 3 0 000-6zm0 2a1 1 0 110 2 1 1 0 010-2z" fill="#FF5A5F"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">© <span id="year"></span> Villa Fish</div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    // Villa Fish, Ovacık Mah, 94.sokak No:7, 48300 Fethiye/Muğla
+    var map = L.map('leaflet-map').setView([36.5753088, 29.148222], 19);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap'
+    }).addTo(map);
+    L.marker([36.5753088, 29.148222]).addTo(map)
+      .bindPopup('Villa Fish<br>Ovacık Mah, 94.sokak No:7')
+      .openPopup();
+  </script>
+</body>
+</html>
+
+
